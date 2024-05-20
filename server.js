@@ -2,12 +2,24 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = 4000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('.'));
 
-const db = new sqlite3.Database('sqlite.db');
+const db = new sqlite3.Database('chicken_prices.db');
+
+db.serialize(() => {
+    db.run(`
+        CREATE TABLE IF NOT EXISTS chicken_prices (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            date TEXT NOT NULL,
+            product_name TEXT NOT NULL,
+            price INTEGER NOT NULL
+        )
+    `);
+});
 
 app.post('/api/add', (req, res) => {
     const { date, product_name, price } = req.body;
