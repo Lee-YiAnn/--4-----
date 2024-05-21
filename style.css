@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1, h2 {
@@ -38,9 +42,17 @@ button:hover {
     background-color: #0056b3;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
