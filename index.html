@@ -9,35 +9,39 @@
 <body>
     <h1>雞排價格變化</h1>
 
-    <h2>輸入數據</h2>
-    <form id="inputForm">
-        <label for="date">日期：</label>
-        <input type="date" id="date" name="date" required><br>
-        <label for="product_name">商品名稱：</label>
-        <input type="text" id="product_name" name="product_name" value="雞排" required><br>
-        <label for="price">價格：</label>
-        <input type="number" id="price" name="price" required><br>
-        <button type="submit">提交</button>
-    </form>
+    <div id="inputContainer">
+        <h2>輸入數據</h2>
+        <form id="inputForm">
+            <label for="date">日期：</label>
+            <input type="date" id="date" name="date" required><br>
+            <label for="product_name">商品名稱：</label>
+            <input type="text" id="product_name" name="product_name" value="雞排" required><br>
+            <label for="price">價格：</label>
+            <input type="number" id="price" name="price" required><br>
+            <button type="submit">提交</button>
+        </form>
 
-    <h2>查詢數據</h2>
-    <input type="text" id="searchInput" placeholder="輸入年份或商品名稱查詢">
-    <button onclick="searchData()">查詢</button>
-
-    <h2>價格變化表</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>日期</th>
-                <th>商品名稱</th>
-                <th>價格</th>
-            </tr>
-        </thead>
-        <tbody id="dataBody">
-            <!-- 資料將在此顯示 -->
-        </tbody>
-    </table>
+        <h2>查詢數據</h2>
+        <input type="text" id="searchInput" placeholder="輸入年份或商品名稱查詢">
+        <button onclick="searchData()">查詢</button>
+    </div>
+    
+    <div id="tableContainer">
+        <h2>價格變化表</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                   <th>ID</th>
+                    <th>日期</th>
+                    <th>商品名稱</th>
+                    <th>價格</th>
+                </tr>
+            </thead>
+            <tbody id="dataBody">
+                <!-- 資料將在此顯示 -->
+            </tbody>
+        </table>
+    </div>
 
     <script src="script.js"></script>
 </body>
